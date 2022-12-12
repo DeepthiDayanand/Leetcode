@@ -3,10 +3,11 @@ public:
     int climbStairs(int n) {
         int step1 = 0, step2 = 1, ans = 0, steps = 0;
         
-        for(steps = 0; steps < n; steps++) {
+        while(steps < n) {
             ans = step1 + step2;
             step1 = step2;
             step2 = ans;
+            steps++;
         }
         return ans;
     }
