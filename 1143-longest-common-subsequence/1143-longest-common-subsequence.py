@@ -6,19 +6,14 @@ class Solution:
         if l1 == 0 or l2 == 0:
             return 0
         
-        memo = [0 for _ in range(col)]
-        
+        memo = [0 for _ in range(col)]      
         for r in range(1, row):
-            prev = memo[0]
-            
+            prev = memo[0]  
             for c in range(1, col):
-                temp = memo[c]
-                
+                temp = memo[c] 
                 if text1[r - 1] == text2[c - 1]:
                     memo[c] = prev + 1
                 else:
-                    memo[c] = max(memo[c - 1], memo[c])
-                    
-                prev = temp
-                
+                    memo[c] = max(memo[c - 1], memo[c])   
+                prev = temp         
         return memo[-1]
