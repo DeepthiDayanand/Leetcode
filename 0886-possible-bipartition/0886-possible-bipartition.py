@@ -3,10 +3,10 @@
 class Solution:
     def possibleBipartition(self, n: int, dislikes: List[List[int]]) -> bool:
         
-        adjacency_list = [[] for _ in range(n)]
+        a_list = [[] for _ in range(n)]  #adjacency list
         for  a, b in dislikes:
-            adjacency_list[a - 1].append(b - 1)
-            adjacency_list[b - 1].append(a - 1)
+            a_list[a - 1].append(b - 1)
+            a_list[b - 1].append(a - 1)
             
         colours = [0]*n  #not visited 0, a = 1, b = 2
         
@@ -17,7 +17,7 @@ class Solution:
                 
                 while queue:
                     v = queue.popleft()
-                    for neighbour in adjacency_list[v]:
+                    for neighbour in a_list[v]:
                         if colours[neighbour] == 0:
                             colours[neighbour] = 3 - colours[v]
                             queue.append(neighbour)
