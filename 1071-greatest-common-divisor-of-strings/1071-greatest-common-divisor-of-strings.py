@@ -5,9 +5,7 @@ class Solution:
 
         if (str1 + str2) != (str2 + str1):
             return ""
-        if str1 == str2:
-            return str1
-        
+
         x = gcd(len(str1), len(str2))
         
         if str1[:x] == str2[:x]:
