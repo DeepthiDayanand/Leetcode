@@ -18,7 +18,7 @@ class Solution {
         }
     }
 
-    /** Returns a random node's value. */
+
     public int getRandom() {
         int pick = (int)(Math.random() * this.range.size());
         return this.range.get(pick);
