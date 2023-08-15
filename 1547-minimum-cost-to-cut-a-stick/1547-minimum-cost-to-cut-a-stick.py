@@ -16,8 +16,8 @@ class Solution:
                 if l < cut < r:
                     res = min(res, (r - l) + dfs(l, cut) + dfs(cut, r))
                                                                
-            dp[(l, r)] = res = 0 if  res == float("inf") else res
-            return res
+            dp[(l, r)] = 0 if res == float("inf") else res
+            return dp[(l, r)]
             
         return dfs(0, n)
         
