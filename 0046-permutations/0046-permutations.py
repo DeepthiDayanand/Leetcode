@@ -3,10 +3,11 @@ class Solution:
         
         res = []
         
-        if len(nums) == 1:
+        #base case
+        if (len(nums)) == 1:
             return [nums.copy()]
-        
-        for i in range (len(nums)):
+            
+        for i in range(len(nums)):
             n = nums.pop(0)
             perms = self.permute(nums)
             
@@ -14,7 +15,7 @@ class Solution:
                 perm.append(n)
             res.extend(perms)
             nums.append(n)
-            
-        return res
-            
         
+        return res
+        
+       
